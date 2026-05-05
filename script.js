@@ -137,7 +137,6 @@ const profileData = {
     },
   ],
   contacts: [
-    { label: "Phone", href: "tel:+918118857783", text: "+91 8118857783" },
     { label: "Email", href: "mailto:tushar_kashyap@outlook.com", text: "tushar_kashyap@outlook.com" },
     { label: "LinkedIn", href: "https://linkedin.com/in/tusharkz", text: "linkedin.com/in/tusharkz" },
   ],
@@ -317,8 +316,7 @@ function setupCustomCursor() {
 
 function setupScrollEffects() {
   const header = document.querySelector(".site-header");
-  const heroDevice = document.querySelector(".hero-device");
-  if (!header || !heroDevice) return;
+  if (!header) return;
 
   const onScroll = () => {
     const scrollY = window.scrollY || window.pageYOffset;
@@ -327,9 +325,6 @@ function setupScrollEffects() {
     } else {
       header.classList.remove("scrolled");
     }
-
-    const parallaxY = Math.min(scrollY * 0.1, 22);
-    heroDevice.style.transform = `translateY(${parallaxY}px)`;
   };
 
   window.addEventListener("scroll", onScroll, { passive: true });
